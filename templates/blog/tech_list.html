@@ -3,5 +3,117 @@
 {% block title %}Tech · {{ BRAND_NAME }}{% endblock %}
 
 {% block content %}
-{# TODO: W1 — 아기 사자 작성 영역 #}
+
+<main class="container">
+        <section class="hero-section">
+            <p class="category-label">TECH NOTES</p>
+            <div class="title-stack">
+                <h1>만들면서 배운 것들.</h1>
+                <div class="search-bar">
+                    <div class="search-bar-text">search posts...</div>
+                </div>
+            </div>
+            
+            <div class="filter-tags">
+                <div class="filter-tag active">All</div>
+                <div class="filter-tag">Frontend</div>
+                <div class="filter-tag">TypeScript</div>
+                <div class="filter-tag">AI</div>
+                <div class="filter-tag">Performance</div>
+                <div class="filter-tag">Series · DS</div>
+            </div>
+        </section>
+
+        <section class="post-list">
+            <article class="post-item">
+                <div class="post-date">2026.04.28</div>
+                <div class="post-content">
+                    <h2 class="post-title">손에 익는 디자인 시스템 만들기</h2>
+                    <p class="post-summary">Designing a system that fits the hand</p>
+                    <div class="post-tags">
+                        <span class="tag category-F">Frontend</span>
+                        <span class="tag">#design-system</span>
+                        <span class="tag">#tokens</span>
+                        <span class="tag">#css</span>
+                    </div>
+                </div>
+                <div class="read-time">8 min</div>
+            </article>
+
+            <article class="post-item">
+                <div class="post-date">2026.04.21</div>
+                <div class="post-content">
+                    <h2 class="post-title">tRPC와 함께한 1년: 좋았던 것, 불편했던 것</h2>
+                    <p class="post-summary">A year with tRPC</p>
+                    <div class="post-tags">
+                        <span class="tag category-ts">TypeScript</span>
+                        <span class="tag">#trpc</span>
+                        <span class="tag">#types</span>
+                        <span class="tag">#dx</span>
+                    </div>
+                </div>
+                <div class="read-time">6 min</div>
+            </article>
+
+            <article class="post-item">
+                <div class="post-date">2026.04.14</div>
+                <div class="post-content">
+                    <h2 class="post-title">CSS Container Queries, 결국 쓰게 되더라</h2>
+                    <p class="post-summary">I came around to container queries</p>
+                    <div class="post-tags">
+                        <span class="tag category-F">Fronted</span>
+                        <span class="tag">#css</span>
+                        <span class="tag">#layout</span>
+                    </div>
+                </div>
+                <div class="read-time">5 min</div>
+            </article>
+
+            <article class="post-item">
+                <div class="post-date">2026.04.07</div>
+                <div class="post-content">
+                    <h2 class="post-title">Vibe coding 다음 단계 — 워크플로우 만들기</h2>
+                    <p class="post-summary">Beyond vibe coding</p>
+                    <div class="post-tags">
+                        <span class="tag category-AI">AI</span>
+                        <span class="tag">#ai</span>
+                        <span class="tag">#workflow</span>
+                        <span class="tag">#agents</span>
+                    </div>
+                </div>
+                <div class="read-time">12 min</div>
+            </article>
+
+            <article class="post-item">
+                <div class="post-date">2026.03.30</div>
+                <div class="post-content">
+                    <h2 class="post-title">React 19 컴파일러로 useMemo를 지웠다</h2>
+                    <p class="post-summary">Removing useMemo with React 19</p>
+                    <div class="post-tags">
+                        <span class="tag category-P">Performance</span>
+                        <span class="tag">#react</span>
+                        <span class="tag">#perf</span>
+                    </div>
+                </div>
+                <div class="read-time">7 min</div>
+            </article>
+
+            <article class="post-item">
+                <div class="post-date">2026.03.22</div>
+                <div class="post-content">
+                    <h2 class="post-title">디자인 토큰을 코드로 옮기는 5가지 방법</h2>
+                    <p class="post-summary">Five ways to ship design tokens</p>
+                    <div class="post-tags">
+                        <span class="tag category-S">Series · DS</span>
+                        <span class="tag">#design-system</span>
+                        <span class="tag">#series</span>
+                        <span class="tag">#5/8</span>
+                    </div>
+                </div>
+                <div class="read-time">9 min</div>
+            </article>
+
+        </section>
+    </main>
+
 {% endblock %}
