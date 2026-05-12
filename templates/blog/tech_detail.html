@@ -1,22 +1,112 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}{{ post.title }} · {{ BRAND_NAME }}{% endblock %}
 
 {% block content %}
-<div class = "toclist">
-
-</div>
-<!-- ------------------------------ -->
-
-<main class = "container">
-
-</main>
-
-<!-- ------------------------------ -->
-<div class = "metasidebar">
+<link rel="stylesheet" href="{% static 'css/tech_detail.css' %}">
 
 
-</div>
+<main class="post-container">
+
+        <aside class="toclist">
+            <div>
+                <p class="toclist-title">ON THIS PAGE</p>
+                <ul>
+                    <li><span class="toclist-text">1. 토큰이란</span></li>
+                    <li><span class="toclist-text">2. 단위 결정</span></li>
+                    <li><span class="toclist-text">3. 빌드 파이프라인</span></li>
+                    <li><span class="toclist-text">4. 마무리</span></li>
+                </ul>
+            </div>
+        </aside>
+
+        <article class="post-content">
+            <header class="post-header">
+                <div class="post-meta-top">
+                    <span class="tag category">Frontend</span>
+                    <span class="dot-separator">2026.04.28 · 8 min · series 5/8</span>
+                </div>
+                <h1 class="post-title">손에 익는 디자인 시스템 만들기</h1>
+                <p class="post-subtitle">Designing a system that fits the hand — tokens, units, and the boring middle.</p>
+            </header>
+
+            <section class="post-body">
+                <p>디자인 시스템을 처음 만들 때, 저는 컴포넌트부터 시작했어요. 버튼, 카드, 입력 필드. 그러다 알았죠. 토큰이 없는 컴포넌트는 짐이라는 걸요.</p>
+                <h2 id="section1">1. 토큰이란</h2>
+                <p>토큰은 디자인 결정에 이름을 붙이는 일이에요. --accent는 "주황색"이 아니라 "강조되는 무엇"을 의미하죠.</p>
+                
+                <div class="code-block">
+                <code>
+                    :root { <br>
+                    &nbsp;&nbsp;--accent: #E8794A; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* terracotta · primary */<br>
+                    &nbsp;&nbsp;--accent-hover: #C95A2C; /* deeper rust */<br>
+                    &nbsp;&nbsp;--bg-page: #F5EDE0; &nbsp;&nbsp;&nbsp;&nbsp;/* page · soft beige */<br>
+                    }
+                </code>
+            </div>
+        </section>
+
+<hr class="post-header-line">
+        </section>
+
+        
+        <!-- 댓글 ------- -->
+            <section class="comment-section">
+                <h3>comments · 4</h3>
+
+                <!-- 로그인----- -->
+                <div class="login-prompt">
+                    <div class="prompt-text">
+                        <strong>댓글을 남기려면 로그인이 필요해요</strong>
+                        <p>Sign in to leave a note on this page.</p>
+                    </div>
+                    <div class="btn-signin-small">Sign in →</div>
+                </div>
+                
+                <!-- 댓글 리스트 ----- -->
+                <div class="comment-list">
+                    <div class="comment-item">
+                        <span class="avatar">JM</span>
+                        <div class="comment-body">
+                            <span class="author">jaemin</span> <span class="date">2026.04.28</span>
+                            <p>토큰 네이밍 진짜 어렵죠. semantic 레벨까지 가면 의견 갈리고요.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comment-list">
+                    <div class="comment-item">
+                        <span class="avatar">SY</span>
+                        <div class="comment-body">
+                            <span class="author">soyun</span> <span class="date">2026.04.29</span>
+                            <p>다음 편 기다릴게요. 빌드 파이프라인 부분 궁금해요.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+        <!-- 메타 사이드바----- -->
+        <aside class="meta-sidebar">
+            <div class="meta-info">
+                <p class="sidebar-title">META</p>
+                <div class="meta-row"><span>author</span><strong>아기사자</strong></div>
+                <div class="meta-row"><span>edited</span><strong>2026.04.29</strong></div>
+                <div class="meta-row"><span>views</span><strong>1,284</strong></div>
+                <div class="meta-row"><span>license</span><strong>CC BY 4.0</strong></div>
+            </div>
+            
+            <div class="share-links">
+                <p class="sidebar-title">SHARE</p>
+                <div class="share-btns">
+                    <div class="share-btn">copy link</div>
+                    <div class="share-btn">X</div>
+                    <div class="share-btn">rss</div>
+                </div>
+            </div>
+        </aside>
+
+</html>
 
 
 {% endblock %}
