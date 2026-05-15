@@ -22,6 +22,11 @@
     gap: 12px;
 }
 
+.welcome-wrapper {
+    display: flex;
+    align-items: center;
+}
+
 .hero-welcome1 {
     color: var(--beige-ink-3, #8A6A55);
     font-family: "JetBrains Mono";
@@ -85,7 +90,7 @@ line-height: 185%;
     align-items: center;
 }
 
-.hero-buttons:active {
+.btn-primary:active {
     transform: scale(0.98); /* 마우스 클릭 시 효과 */
 }
 
@@ -116,7 +121,7 @@ color: var(--beige-ink-1, #3A2419);
     width: 880px;
     border-top: 1px solid var(--beige-line-default, #D9C7A8);
     padding-top: 20px;
-    gap: 16px;
+    gap: 8px;
     align-items: center;
 }
 
@@ -189,7 +194,7 @@ font-family: Inter;
 font-size: 24px;
 font-style: normal;
 font-weight: 700;
-line-height: 135%; /* 32.4px */
+line-height: 135%;
 }
 
 .section-header {
@@ -314,6 +319,12 @@ box-shadow: 0 8px 20px rgba(58, 36, 25, 0.07);;
 }
 
 /* 사이드 리스트 */
+
+a {
+    text-decoration: none;
+    color: inherit; 
+}
+
 .latest-list {
     display: flex;
     width: 396px;

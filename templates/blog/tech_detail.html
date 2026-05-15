@@ -27,23 +27,24 @@
                     <span class="dot-separator">2026.04.28 · 8 min · series 5/8</span>
                 </div>
                 <h1 class="post-title">손에 익는 디자인 시스템 만들기</h1>
-                <p class="post-subtitle">Designing a system that fits the hand — tokens, units, and the boring middle.</p>
+                <div class="post-subtitle">Designing a system that fits the hand — tokens, units, and the boring middle.</div >
             </header>
 
             <section class="post-body">
                 <p>디자인 시스템을 처음 만들 때, 저는 컴포넌트부터 시작했어요. 버튼, 카드, 입력 필드. 그러다 알았죠. 토큰이 없는 컴포넌트는 짐이라는 걸요.</p>
                 <h2 id="section1">1. 토큰이란</h2>
-                <p>토큰은 디자인 결정에 이름을 붙이는 일이에요. --accent는 "주황색"이 아니라 "강조되는 무엇"을 의미하죠.</p>
+                <div class="post-body-t">토큰은 디자인 결정에 이름을 붙이는 일이에요. <span class="codetext">--accent</span>는 "주황색"이 아니라 "강조되는 무엇"을 의미하죠.</div>
                 
                 <div class="code-block">
                 <code>
                     :root { <br>
-                    &nbsp;&nbsp;--accent: #E8794A; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* terracotta · primary */<br>
+                    &nbsp;&nbsp;--accent: #E8794A; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* terracotta · primary */<br>
                     &nbsp;&nbsp;--accent-hover: #C95A2C; /* deeper rust */<br>
-                    &nbsp;&nbsp;--bg-page: #F5EDE0; &nbsp;&nbsp;&nbsp;&nbsp;/* page · soft beige */<br>
+                    &nbsp;&nbsp;--bg-page: #F5EDE0; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* page · soft beige */<br>
                     }
                 </code>
             </div>
+            <div class="post-body-text">이름을 잘 붙이면, 색을 바꾸는 일이 의미를 바꾸는 일이 됩니다. 그게 시스템이에요.</div>
         </section>
 
 <hr class="post-header-line">
@@ -66,19 +67,23 @@
                 <!-- 댓글 리스트 ----- -->
                 <div class="comment-list">
                     <div class="comment-item">
-                        <span class="avatar">JM</span>
-                        <div class="comment-body">
-                            <span class="author">jaemin</span> <span class="date">2026.04.28</span>
+                            <span class="avatar">JM</span>
+                            <div class="comment-body">
+                                <div class="comment-wrapper">
+                            <span class="author">jaemin</span> <span class="date">2026.04.28</span></div>
                             <p>토큰 네이밍 진짜 어렵죠. semantic 레벨까지 가면 의견 갈리고요.</p>
                         </div>
                     </div>
                 </div>
 
+                <hr class="post-header-line">
+                
                 <div class="comment-list">
                     <div class="comment-item">
                         <span class="avatar">SY</span>
                         <div class="comment-body">
-                            <span class="author">soyun</span> <span class="date">2026.04.29</span>
+                            <div class="comment-wrapper">
+                            <span class="author">soyun</span> <span class="date">2026.04.29</span></div>
                             <p>다음 편 기다릴게요. 빌드 파이프라인 부분 궁금해요.</p>
                         </div>
                     </div>
@@ -99,7 +104,7 @@
             <div class="share-links">
                 <p class="sidebar-title">SHARE</p>
                 <div class="share-btns">
-                    <div class="share-btn">copy link</div>
+                    <div class="share-btn">copy ⎘</div>
                     <div class="share-btn">X</div>
                     <div class="share-btn">rss</div>
                 </div>

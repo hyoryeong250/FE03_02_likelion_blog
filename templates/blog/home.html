@@ -11,13 +11,15 @@
 
     <section class="hero">
         <div class="hero-inner">
-            <p class="hero-welcome1">welcome · 환영합니다</p>
-            <p class="hero-welcome2">— 2026, week 18</p>
-            <p class="hero-title">기록하는 일이<br>성장이 되는 곳<span class="dot">.</span></p>
-            <p class="hero-description">
+            <div class="welcome-wrapper">
+                <p class="hero-welcome1">welcome · 환영합니다</p>
+                <p class="hero-welcome2">— 2026, week 18</p>
+            </div>
+            <div class="hero-title">기록하는 일이<br>성장이 되는 곳<span class="dot">.</span></div>
+            <div class="hero-description">
                 아기사자(BL)가 매일 조금씩 적어가는 노트입니다.<br>
                 기술, 프로젝트, 그리고 평범한 하루의 단상까지 — 천천히 쌓아 둡니다.
-        </p>
+            </div>
 
         <div class="hero-buttons">
                 <button class="btn-primary" onclick="location.href='#'">최신 글 읽기 →</button>
@@ -25,7 +27,7 @@
                 <button class="btn-outline" onclick="location.href='#'">RSS</button>
         </div>
 
-        <p class="hero-status">
+        <div class="hero-status">
                 <span class="status-dot">
                     <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
                         <circle cx="4" cy="4" r="4" fill="#E8794A"/>
@@ -33,7 +35,8 @@
                 </span>
                 <span class="hero-status-text1">now writing</span>
                 <span class="hero-status-text2">디자인 토큰 시리즈 6편</span>
-            </p>
+        </div>
+
         </div>
     </section>
 
@@ -48,7 +51,7 @@
         <div class="notes-grid">
             <!-- Main Featured Card -->
             <article class="main-card">
-                <a href="{% url 'tech_detail' 'design-system-that-fits-the-hand' %}" style="text-decoration: none; color: inherit;">
+                <a href="{% url 'tech_detail' 'design-system-that-fits-the-hand' %}">
                     <div class="card-image">
                         <span>손에 익는 디자인 시스템 · cover</span>
                     </div>
