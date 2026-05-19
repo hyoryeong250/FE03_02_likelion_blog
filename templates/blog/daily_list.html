@@ -1,7 +1,57 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}Daily · {{ BRAND_NAME }}{% endblock %}
 
 {% block content %}
 {# 도전 과제 — 본 커리큘럼 범위 밖 #}
+
+<link rel="stylesheet" href="{% static 'css/daily_list.css' %}">
+
+<main class="container">
+
+        <section class="hero-section">
+            <p class="category-label">{{page_eyebrow}}</p>
+
+            <div class="title-stack">
+                <h1>{{page_h1}}</h1>
+
+                <div class="search-bar">
+                    <span class="search-icon">⌕</span>
+                    <input 
+                        class="search-input" 
+                        type="text" 
+                        placeholder="search posts…">
+                <span class="search-shortcut">⌘K</span>
+                </div>
+            </div>
+            
+            <div class="filter-tags">
+                <div class="filter-tag active">All</div>
+                {% for category in categories %}
+                <div class="filter-tag">{{category.label}}</div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <div class="post-list">
+            {% for entry in entries %}
+            <div class="post-item">
+                <div class="post-date">{{ entry.published_at }}</div>
+
+                <div class="post-content">
+                    <a href="#">
+                    <h2 class="post-title">{{entry.title}}</h2>
+                    <p class="post-summary">{{ entry.body|truncatechars:100 }}</p>
+
+                    <div class="post-tags">
+                        <span class="tag-category-F">{{entry.category.label}}</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+        </div>
+    </main>
+
+
 {% endblock %}

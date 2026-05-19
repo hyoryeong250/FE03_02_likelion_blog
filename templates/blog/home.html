@@ -12,13 +12,13 @@
     <section class="hero">
         <div class="hero-inner">
             <div class="welcome-wrapper">
-                <p class="hero-welcome1">welcome · 환영합니다</p>
-                <p class="hero-welcome2">— 2026, week 18</p>
+                <p class="hero-welcome1">{{ hero.eyebrow_left}}</p>
+                <p class="hero-welcome2">{{hero.eyebrow_right}}</p>
             </div>
-            <div class="hero-title">기록하는 일이<br>성장이 되는 곳<span class="dot">.</span></div>
+            <div class="hero-title">{{hero.h1_line1}}<br>{{hero.h1_line2}}<span class="dot">.</span></div>
             <div class="hero-description">
-                아기사자(BL)가 매일 조금씩 적어가는 노트입니다.<br>
-                기술, 프로젝트, 그리고 평범한 하루의 단상까지 — 천천히 쌓아 둡니다.
+                {{hero.bio_line1}}<br>
+                {{hero.bio_line2}}
             </div>
 
         <div class="hero-buttons">
@@ -34,7 +34,7 @@
                     </svg>
                 </span>
                 <span class="hero-status-text1">now writing</span>
-                <span class="hero-status-text2">디자인 토큰 시리즈 6편</span>
+                <span class="hero-status-text2">{{hero.now_writing}}</span>
         </div>
 
         </div>
@@ -48,77 +48,49 @@
             <a href="{% url 'tech_list' %}" class="see-all">see all →</a>
         </div>
 
+
+
+
+        
         <div class="notes-grid">
-            <!-- Main Featured Card -->
+            {% if featured %}
             <article class="main-card">
-                <a href="{% url 'tech_detail' 'design-system-that-fits-the-hand' %}">
+                <a href="{% url 'tech_detail' featured.slug %}">
                     <div class="card-image">
-                        <span>손에 익는 디자인 시스템 · cover</span>
+                        <span>{{ featured.title }} · cover</span>
                     </div>
+
                     <div class="card-body">
                         <div class="card-tags">
-                            <span class="tag">Frontend</span>
-                            <span class="series">series · 5/8</span>
-                            <span class="date">2026.04.28 · 8 min</span>
+                            <span class="tag">{{ featured.category.label }}</span>
+                            <span class="series">{{ featured.series_label }}</span>
+                            <span class="date">{{ featured.date_display }} · {{ featured.read_minutes }} min</span>
                         </div>
-                        <h3>손에 익는 디자인 시스템 만들기</h3>
-                        <p>토큰을 짓는 일은 결국 이름을 짓는 일이다. 작은 결정에 이름을 붙이는 일 — 그게 시스템이다.</p>
+                        <h3>{{ featured.title }}</h3>
+                        <p>{{ featured.body|truncatechars:60 }}</p>
                         <div class="read-more">이어 읽기 →</div>
                     </div>
                 </a>
             </article>
+            {% endif %} 
+
 
             <aside class="latest-list">
-                <header class="latest-header">LATEST · 최근 5편</header>
+                <header class="latest-header">LATEST · 최근 {{ others|length }}편</header>
                 <ul class="latest-items">
+                    
+                    {% for post in others %}
                     <li>
                         <div class="list-meta">
-                            <span class="list-tag type-ts">TypeScript</span>
-                            <span class="list-date">04.21</span>
+                            <span class="list-tag">{{ post.category.label }}</span>
+                            <span class="list-date">{{ post.published_at }}</span>
                         </div>
-                        <a href="{% url 'tech_detail' 'design-system-that-fits-the-hand' %}">
-                            <p>tRPC와 함께한 1년: 좋았던 것, 불편했던 것</p>
+                        <a href="{% url 'tech_detail' post.slug %}">
+                            <p>{{ post.title }}</p>
                         </a>
                     </li>
-                    <li>
-                        <div class="list-meta">
-                            <span class="list-tag">Frontend</span>
-                            <span class="list-date">04.14</span>
-                        </div>
-                        <a href="{% url 'tech_detail' 'design-system-that-fits-the-hand' %}">
-                            <p>CSS Container Queries, 결국 쓰게 되더라</p>
-                        </a>
-                    </li>
-                    <li>
-                        <div class="list-meta">
-                            <span class="list-tag">AI</span>
-                            <span class="list-date">04.07</span>
-                        </div>
-                        <a href="{% url 'tech_detail' 'design-system-that-fits-the-hand' %}">
-                            <p>Vibe coding 다음 단계 — 워크플로우 만들기</p>
-                        </a>
-                    </li>
-                    <li>
-                        <div class="list-meta">
-                            <span class="list-tag">Performance</span>
-                            <span class="list-date">03.30</span>
-                        </div>
-                        <a href="{% url 'tech_detail' 'design-system-that-fits-the-hand' %}">
-                            <p>React 19 컴파일러로 useMemo를 지웠다</p>
-                        </a>
-                    </li>
-                    <li>
-                        <div class="list-meta">
-                            <span class="list-tag">Series · DS</span>
-                            <span class="list-date">03.22</span>
-                        </div>
-                        <a href="{% url 'tech_detail' 'design-system-that-fits-the-hand' %}">
-                            <p>디자인 토큰을 코드로 옮기는 5가지 방법</p>
-                        </a>
-                    </li>
-                </ul>
+                    {% endfor %}
+                    </ul>
             </aside>
         </div>
-    </section>
-</section>
-{% endblock %}
+    </section> </section> {%endblock%}

@@ -14,7 +14,7 @@
     width: 220px;
     flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
+    gap: 8px;
 }
 
 .toclist-title {
@@ -180,6 +180,7 @@ margin-top: 20px;
     border: none;
     border-top: 1px dashed var(--beige-line-strong, #B59C82);
     width: 680px;
+    margin:0%
 }
 /* <!-----댓글 영역 ---------> */
 .comment-section {
@@ -263,7 +264,6 @@ transform: scale(0.98);
     align-items: flex-start;
     gap: 12px;
     align-self: stretch;
-    margin-bottom: 20px;
 }
 
 .avatar {
@@ -365,6 +365,7 @@ transform: scale(0.98);
     align-self: stretch;
     flex-wrap: wrap;
     margin-top: 12px;
+    line-height: 100%;
 }
 
 .share-btn {
