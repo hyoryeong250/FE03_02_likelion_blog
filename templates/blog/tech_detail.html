@@ -69,20 +69,32 @@
                 
                 <!-- 댓글 리스트 ----- -->
                 <div class="comment-list">
-                    {% for comment in comments %}
+
                     <div class="comment-item">
-                            <span class="avatar">JM</span>
-                            <div class="comment-body">
-                                <div class="comment-wrapper">
-                            <span class="author">{{ comment.display_name }}</span> <span class="date">{{ comment.date_display }}</span></div>
-                            <p>{{ comment.body }}</p>
+                        <span class="avatar">JM</span>
+                        <div class="comment-body">
+                            <div class="comment-wrapper">
+                                <span class="author">jaemin</span> <span class="date">2026.04.28</span>
+                            </div>
+                            <p>토큰 네이밍 진짜 어렵죠. semantic 레벨까지 가면 의견 갈리고요.</p>
+                    </div>
+                </div>
+
+                <hr class="comment-line">
+                
+                <div class="comment-list">
+
+                    <div class="comment-item">
+                        <span class="avatar">SY</span>
+                        <div class="comment-body">
+                            <div class="comment-wrapper">
+                                <span class="author">soyun</span> <span class="date">2026.04.29</span>
+                            </div>
+                            <p>다음 편 기다릴게요. 빌드 파이프라인 부분 궁금해요.</p>
                         </div>
                     </div>
                 </div>
 
-                <hr class="post-header-line">
-                {% endfor %}
-                </div>
             </section>
         </article>
 

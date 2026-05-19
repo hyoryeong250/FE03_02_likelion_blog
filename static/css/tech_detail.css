@@ -180,7 +180,7 @@ margin-top: 20px;
     border: none;
     border-top: 1px dashed var(--beige-line-strong, #B59C82);
     width: 680px;
-    margin:0%
+    margin:0%;
 }
 /* <!-----댓글 영역 ---------> */
 .comment-section {
@@ -253,6 +253,17 @@ transform: scale(0.98);
 }
 
 /* 댓글 ----------------------------- */
+
+.comment-line {
+    background: none; 
+    height: 0;
+    border: none;
+    border-top: 1px dashed var(--beige-line-strong, #B59C82);
+    width: 680px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 .comment-wrapper {
     display: flex;
     align-items: baseline;
