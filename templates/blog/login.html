@@ -3,5 +3,60 @@
 {% block title %}로그인 · {{ BRAND_NAME }}{% endblock %}
 
 {% block content %}
-{# TODO: W3 — 아기 사자 작성 영역 #}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+<main class="main-content">
+    <div class="login-card">
+        <div class="card-header">
+            <p class="subtitle">LOGIN · 로그인</p>
+            <h1 class="title">다시 오셨네요.</h1>
+            <p class="description">
+                Welcome back. Sign in to leave notes and comments.
+            </p>
+        </div>
+        
+        <div class="line_bar"></div>
+
+        <form action="{% url 'login' %}" method="POST" class="login-form">
+            {% csrf_token %}
+
+            <div class="input-group">
+                <label for="username">ID</label>
+                <input type="text" 
+                       id="username" 
+                       name="username"
+                       placeholder="babyLion"
+                       required>
+            </div>
+            
+            <div class="input-group">
+                <label for="password">PASSWORD</label>
+                <input type="password" 
+                       id="password"  
+                       name="password"
+                       placeholder="••••••••"
+                       required>
+            </div>
+
+            <div class="forgot-wrapper">
+                <a href="#" class="link-forgot">forgot password?</a>
+            </div>
+
+            <div class="form-options">
+                <label class="checkbox-container">
+                    <input type="checkbox" name="remember" id="remember" checked>
+                    <span class="checkmark"></span>
+                    Remember me on this paper
+                </label>
+            </div>
+
+            <button type="submit" class="btn-submit">Sign in &rarr;</button>
+        </form>
+
+        <div class="card-footer">
+            <span>처음이신가요? <a href="{% url 'signup' %}" class="link-signup">Create an account</a></span>
+        </div>
+    </div>
+</main>
 {% endblock %}

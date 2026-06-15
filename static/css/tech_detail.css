@@ -394,3 +394,67 @@ transform: scale(0.98);
 .share-btn:hover {
     background: var(--beige-bg-sunken, #EFE4D2);
 }
+
+
+
+
+.comment-write-box {
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    gap: 12px;
+    align-self: stretch;
+    border-radius: 14px;
+    border: 1px solid var(--beige-line-default, #D9C7A8);
+    background: var(--beige-bg-paper, #FBF6EC); /* 기존 박스와 통일성 유지 */
+}
+
+.comment-input-area {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+}
+
+.comment-input-name {
+    color: var(--beige-ink-1, #3A2419);
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.comment-input-area input {
+    border: none;
+    background: transparent;
+    color: var(--beige-ink-1, #3A2419);
+    font-family: Inter;
+    font-size: 14px;
+    padding: 2px 0;
+    width: 100%;
+}
+
+/* 인풋창 활성화 시 테두리 아웃라인 해제 */
+.comment-input-area input:focus {
+    outline: none;
+}
+
+/* 전송 버튼 (기존 Sign in 버튼 컴포넌트 스타일 계승) */
+.btn-post-submit {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    background: var(--beige-accent-default, #E8794A);
+    color: var(--beige-bg-paper, #FBF6EC);
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-post-submit:hover {
+    background: var(--beige-accent-hover, #C95A2C);
+}
+
+.btn-post-submit:active {
+    transform: scale(0.98);
+}

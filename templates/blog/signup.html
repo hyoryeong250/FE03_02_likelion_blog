@@ -3,5 +3,62 @@
 {% block title %}회원가입 · {{ BRAND_NAME }}{% endblock %}
 
 {% block content %}
-{# TODO: W3 — 아기 사자 작성 영역 #}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+<main class="main-content">
+    <div class="login-card">
+        <div class="card-header">
+            <p class="subtitle">SIGN UP · 회원가입</p>
+            <h1 class="title">처음 오셨네요<span class="orange-dot">.</span></h1>
+            <p class="description">
+                Make a paper to leave notes, save posts, and join the conversation.
+            </p>
+        </div>
+
+        <div class="line_bar"></div>
+
+        <form action="{% url 'signup' %}" method="POST" class="login-form">
+            {% csrf_token %}
+
+            <div class="input-group">
+                <label for="name">NAME · 이름</label>
+                <input type="text" id="name" name="name" placeholder="Like Lion" required>
+            </div>
+
+            <div class="input-group">
+                <label for="username">ID</label>
+                <input type="text" id="username" name="username" placeholder="babyLion" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">PASSWORD</label>
+                <input type="password" id="password" name="password" placeholder="8자 이상, 영문/숫자 포함" required>
+            </div>
+
+            <div class="form-options privacy-options">
+                <label class="checkbox-container align-top">
+                    <input type="checkbox" name="agree" id="agree_terms" required>
+                    <span class="checkmark"></span>
+                    <div class="terms-text">
+                        <p class="terms-main">
+                            <span class="highlight-text">이용약관</span>과
+                            <span class="highlight-text">개인정보 처리방침</span>에 동의합니다.
+                        </p>
+                        <p class="terms-sub">
+                            I agree to the <span class="highlight-text">Terms</span> and
+                            <span class="highlight-text">Privacy Policy</span>.
+                        </p>
+                    </div>
+                </label>
+            </div>
+
+            <button type="submit" class="btn-submit">Create account &rarr;</button>
+        </form>
+
+        <div class="card-footer">
+            <span>이미 계정이 있으신가요? <a href="{% url 'login' %}" class="link-signup">Sign in</a></span>
+        </div>
+    </div>
+</main>
 {% endblock %}
